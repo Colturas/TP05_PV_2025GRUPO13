@@ -1,8 +1,11 @@
 import { useParams, useNavigate } from "react-router-dom";
+
 function DetalleAlumno({ alumnos }) {
   const { id } = useParams();
   const navigate = useNavigate();
-  const alumno = alumnos.find((a) => a.lu === id);
+  const alumnoId = parseInt(id, 10);
+  const alumno = alumnos.find((a) => a.id === alumnoId);
+
   if (!alumno) {
     return (
       <div style={{ padding: "20px" }}>
@@ -11,6 +14,7 @@ function DetalleAlumno({ alumnos }) {
       </div>
     );
   }
+
   return (
     <div style={{ padding: "20px" }}>
       <h2>Detalles del Alumno</h2>
@@ -25,4 +29,5 @@ function DetalleAlumno({ alumnos }) {
     </div>
   );
 }
+
 export default DetalleAlumno;

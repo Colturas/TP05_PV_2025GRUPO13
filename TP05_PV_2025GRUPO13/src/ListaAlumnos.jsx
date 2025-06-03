@@ -1,16 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
-function ListaAlumnos({ alumnos, setAlumnos }) {
+
+function ListaAlumnos({ alumnos, onDelete }) {
   const navigate = useNavigate();
-  const eliminarAlumno = (lu) => {
-    const confirmar = confirm("ELIMINAR ESTE ALUMNO?");
-    if (confirmar) {
-      const nuevosAlumnos = alumnos.filter((a) => a.lu !== lu);
-      setAlumnos(nuevosAlumnos);
-    }
-  }; //no toquen esto porfavor 
+
   return (
     <div style={{ padding: "20px" }}>
       <h2>Lista de Alumnos</h2>
+      <button onClick={() => navigate("/papelera")} style={{ marginBottom: "10px" }}>
+        🗑️
+      </button>
       {alumnos.length === 0 ? (
         <p>No hay alumnos cargados.</p>
       ) : (
@@ -26,21 +24,19 @@ function ListaAlumnos({ alumnos, setAlumnos }) {
           </thead>
           <tbody>
             {alumnos.map((alumno) => (
-              <tr key={alumno.lu}>
+              <tr key={alumno.id}>
                 <td>{alumno.lu}</td>
                 <td>{alumno.nombre}</td>
                 <td>{alumno.apellido}</td>
                 <td>{alumno.curso}</td>
                 <td>
-                  <Link to={`/alumnos/${alumno.lu}`}>
+                  <Link to={`/alumnos/${alumno.id}`}>
                     <button>Ver</button>
                   </Link>{" "}
-                  <button
-                    onClick={() => navigate(`/alumnos/${alumno.lu}/editar`)}
-                  >
+                  <button onClick={() => navigate(`/alumnos/${alumno.id}/editar`)}>
                     Editar
                   </button>{" "}
-                  <button onClick={() => eliminarAlumno(alumno.lu)}>
+                  <button onClick={() => onDelete(alumno.id)}>
                     Eliminar
                   </button>
                 </td>
@@ -52,4 +48,6 @@ function ListaAlumnos({ alumnos, setAlumnos }) {
     </div>
   );
 }
+
 export default ListaAlumnos;
+

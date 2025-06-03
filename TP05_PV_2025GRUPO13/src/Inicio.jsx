@@ -1,10 +1,10 @@
-import React from "react";
-
-export default function Inicio() {
+function Inicio() {
   return (
     <div>
-      <h1>Bienvenido a la Gestión de Alumnos</h1>
-      <p>Utiliza el menú de navegación para comenzar a trabajar con los alumnos.</p>
+      <h1>Bienvenido al Sistema de Gestión de Alumnos</h1>
+      <p>Utiliza el menú de navegación para acceder a las distintas funciones del sistema.</p>
     </div>
   );
 }
+
+export default Inicio;
