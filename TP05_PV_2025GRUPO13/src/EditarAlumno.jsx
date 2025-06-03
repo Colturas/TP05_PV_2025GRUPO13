@@ -117,3 +117,4 @@ function EditarAlumno({ alumnos, setAlumnos }) {
 }
 
 export default EditarAlumno;
+
