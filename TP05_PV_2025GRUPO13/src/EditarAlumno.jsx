@@ -51,6 +51,8 @@ function EditarAlumno({ alumnos, setAlumnos }) {
     navigate("/alumnos");
   };
 
+
+  
   return (
     <div style={{ padding: "20px" }}>
       <h2>Editar Alumno</h2>
