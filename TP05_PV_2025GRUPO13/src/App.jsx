@@ -9,6 +9,8 @@ import DetalleAlumno from "./DetalleAlumno";
 import AcercaDe from "./AcercaDe";
 import Papelera from "./Papelera";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   const [alumnos, setAlumnos] = useState([]);
   const [papelera, setPapelera] = useState([]);
