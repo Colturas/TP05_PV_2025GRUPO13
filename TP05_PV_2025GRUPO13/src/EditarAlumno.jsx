@@ -51,6 +51,8 @@ function EditarAlumno({ alumnos, setAlumnos }) {
     navigate("/alumnos");
   };
 
+
+  
   return (
 
 
