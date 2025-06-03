@@ -52,6 +52,9 @@ function EditarAlumno({ alumnos, setAlumnos }) {
   };
 
   return (
+
+
+  
     <div style={{ padding: "20px" }}>
       <h2>Editar Alumno</h2>
       <form onSubmit={handleSubmit}>
